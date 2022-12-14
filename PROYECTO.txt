@@ -2,11 +2,6 @@ Create database Soluciones_Digitales;
 
 Use Soluciones_Digitales;
 
-Create table rol(
-	id int IDENTITY(1,1) PRIMARY KEY,
-	Nombre varchar(55),
-);
-
 CREATE TABLE Usuario(
 	Id int IDENTITY(1,1) PRIMARY KEY,
 	Nombres nvarchar (50),
@@ -18,16 +13,40 @@ CREATE TABLE Usuario(
 	Posicion nvarchar (50),
 );
 
-Create table solucion_tipo(
+Create table rol(
 	id int IDENTITY(1,1) PRIMARY KEY,
-	Nombre varchar(255),
-	Descripcion varchar(255)
+	Nombre varchar(55),
 );
-
+CREATE TABLE factura(
+	Id int IDENTITY(1,1) PRIMARY KEY,
+	Nombre nvarchar (50),
+	detalles nvarchar (50),
+	costo nvarchar (50),
+	fecha nvarchar (50),		
+	solucion_id nvarchar (50),
+		
+);
 Create table solucion(
 	id int IDENTITY(1,1) PRIMARY KEY,
 	Nombre varchar(255),
 	Usuario_Asignado int foreign key references usuario(id),
 	Usuario_Cliente  int foreign key references usuario(id),
 	tipo_solucion_id int foreign key references solucion_tipo(id),
-	P…
+);
+
+Create table solucion_tipo(
+	id int IDENTITY(1,1) PRIMARY KEY,
+	Nombre varchar(255),
+	Descripcion varchar(255)
+);
+
+CREATE TABLE tareas(
+	Id int IDENTITY(1,1) PRIMARY KEY,
+	Nombre nvarchar (50),
+	descripcion nvarchar (50),
+	solucion_id nvarchar (50),
+	status nvarchar (50),
+	fecha nvarchar (50),	
+);
+
+p...
