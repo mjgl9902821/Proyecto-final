@@ -7,15 +7,15 @@ Create table rol(
 	Nombre varchar(55),
 );
 
-Create table usuario(
-	id int IDENTITY(1,1) PRIMARY KEY,
-	Nombres varchar(255),
-	Apellidos varchar(255),
-	Telefono varchar(255),
-	Direccion varchar(255),
-	Correo varchar(255),
-	Posición varchar(255),
-	Rol_id int foreign key references rol(id)
+CREATE TABLE Usuario(
+	Id int IDENTITY(1,1) PRIMARY KEY,
+	Nombres nvarchar (50),
+	Apellidos nvarchar (50),
+	Cumpleaños nvarchar (50),
+	Telefono nvarchar (50),
+	Direccion nvarchar (50),
+	Correo nvarchar (50),
+	Posicion nvarchar (50),
 );
 
 Create table solucion_tipo(
